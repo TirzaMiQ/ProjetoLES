@@ -1,0 +1,29 @@
+<h4>Editar Cartão</h4>
+<form>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="numcartao" name="numCartao" type="text" [(ngModel)]="cartao.numCartao" class=" validate ">
+            <label for="numcartao ">Número do Cartão</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="nomeclientecartao" name="nomeClienteCartao" type="text " [(ngModel)]="cartao.nomeClienteCartao " class="validate ">
+            <label for="nomeclientecartao ">Nome impresso no Cartão</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="tipoBandeira" name="bandeira" type="text " [(ngModel)]="cartao.bandeira " class="validate ">
+            <label for="tipoBandeira">Bandeira</label>
+        </div>
+
+        <div class="input-field col s6">
+            <input id="codigo" name="codigo" type="text " [(ngModel)]="cartao.codigo " class="validate ">
+            <label for="codigo">Código</label>
+        </div>
+    </div>
+
+    <a type="submit" class="waves-effect waves-light btn" *ngIf="!cliente.id">
+        <i class="material-icons">save</i>Atualizar</a>
+
+    <a type="button" class="waves-effect waves-light btn" (click)="voltarParaListagem()">
+        <i class="material-icons">arrow_back</i>Voltar</a>
+
+</form>

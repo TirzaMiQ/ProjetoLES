@@ -1,0 +1,30 @@
+.modal>div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 15px 20px;
+    background: #fff;
+}
+
+.botao {
+    margin-left: 200px;
+    margin-top: 50px;
+}
+
+.center {
+    margin-left: 450px;
+    /*width: 40px;
+    height: 30px;
+    border-color: black;
+    border-style: solid 2px; */
+}
+
+.container {
+    margin-top: 40px;
+    border-style: solid;
+    border-color: darkgray;
+}
+
+hr {
+    margin: 10px 0;
+}

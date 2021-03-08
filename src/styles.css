@@ -5,3 +5,7 @@
 .a:link {
     text-decoration: none;
 }
+
+.space-button {
+    margin: 20px;
+}

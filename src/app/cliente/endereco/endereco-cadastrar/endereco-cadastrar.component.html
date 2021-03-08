@@ -1,0 +1,100 @@
+<div>
+    <h4>Lista de Endereços</h4>
+</div>
+
+<div class="mat-elevation-z4">
+    <table class="highlight">
+        <thead>
+            <tr>
+                <th>Endereco</th>
+                <th>Numero</th>
+                <th>Bairro</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>País</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let endereco of enderecos">
+                <td>{{ endereco.endereco }}</td>
+                <td>{{ endereco.numero }}</td>
+                <td>{{ endereco.bairro }}</td>
+                <td>{{ endereco.cidade }}</td>
+                <td>{{ endereco.estado }}</td>
+                <td>{{ endereco.pais }}</td>
+                <td>
+                    <a routerLink="/cliente/endereco/endereco-editar/{{ endereco.id }}" class="waves-effect waves-light btn">
+                        <i class="material-icons">create</i></a>
+
+                    <!-- <a class="waves-effect waves-light btn modal-trigger" (click)="preparaDelecao(endereco)" href="#modal1">
+                        <i class="material-icons">delete</i></a> -->
+                </td>
+            </tr>
+        </tbody>
+
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Confirmação</h4>
+                </div>
+                <!--  <div class="modal-content" *ngIf="enderecoSelecionado">
+                    Confirma a deleção do(a) Cartão {{ enderecoSelecionado.endereco }}?
+                </div> -->
+
+                <!--  <div class="modal-footer">
+                    <a class="waves-effect waves-light btn" (click)="deletarCartao()" data-dismiss="modal">Confirmar</a>
+                    <a class="waves-effect waves-light btn" data-dismiss="modal">Cancelar</a>
+                </div> -->
+
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </div>
+
+    </table>
+</div>
+
+
+<h4>Cadastrar Novo Endereço</h4>
+<div class="row">
+    <div class="input-field col s6">
+        <input id="logradouro" type="text" class="validate">
+        <label for="logradouro">Tipo Logradouro</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="residencia" type="text" class="validate">
+        <label for="residencia">Tipo Residência</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="endereco" type="text" class="validate">
+        <label for="endereco">Endereço</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="numero" type="text" class="validate">
+        <label for="numero">Numero</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="bairro" type="text" class="validate">
+        <label for="bairro">Bairro</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="cep" type="text" class="validate">
+        <label for="cep">CEP</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="cidade" type="text" class="validate">
+        <label for="cidade">Cidade</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="estado" type="text" class="validate">
+        <label for="estado">Estado</label>
+    </div>
+    <div class="input-field col s6">
+        <input id="pais" type="text" class="validate">
+        <label for="pais">País</label>
+    </div>
+</div>

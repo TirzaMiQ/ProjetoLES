@@ -1,0 +1,24 @@
+/* .box{
+    width: 85%;
+    height: 1200px;
+    background: black;
+    margin-left: 100px;
+} */
+
+
+/*.carrosel {
+    height: 500px;
+}*/
+
+.conteiner img {
+    max-width: 1900px;
+    max-height: 600px;
+    width: auto;
+    height: auto;
+}
+
+.center {
+    margin-top: 50px;
+    width: 300px;
+    height: 450px;
+}

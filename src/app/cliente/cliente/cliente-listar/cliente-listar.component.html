@@ -1,0 +1,57 @@
+<div>
+    <h4>Lista de Cartões</h4>
+</div>
+
+<div class="mat-elevation-z4">
+    <table class="highlight">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Genero</th>
+                <th>Data de Nascimento</th>
+                <th>CPF</th>
+                <th>Telefone</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes">
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.nomeClienteCartao }}</td>
+                <td>{{ cliente.bandeira }}</td>
+                <td>{{ cliente.codigo }}</td>
+                <td>
+                    <a routerLink="/cliente/cliente/editar-cliente/{{ cliente.id }}" class="waves-effect waves-light btn">
+                        <i class="material-icons">create</i></a>
+
+                    <a class="waves-effect waves-light btn modal-trigger" (click)="preparaDelecao(cartao)" href="#modal1">
+                        <i class="material-icons">delete</i></a>
+                </td>
+            </tr>
+        </tbody>
+
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Confirmação</h4>
+                </div>
+                <div class="modal-content" *ngIf="clienteSelecionado">
+                    Confirma a deleção do(a) Cartão {{ clienteSelecionado.numCartao }}?
+                </div>
+
+                <div class="modal-footer">
+                    <a class="waves-effect waves-light btn" (click)="deletarCartao()" data-dismiss="modal">Confirmar</a>
+                    <a class="waves-effect waves-light btn" data-dismiss="modal">Cancelar</a>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+            </div>
+        </div>
+
+    </table>
+</div>

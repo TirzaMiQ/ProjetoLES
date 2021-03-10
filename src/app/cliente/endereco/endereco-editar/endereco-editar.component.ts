@@ -21,7 +21,7 @@ export class EnderecoEditarComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
-    this.endereco = new Endereco();
+    //this.endereco = new Endereco();
   }
 
   ngOnInit(): void {
@@ -33,14 +33,14 @@ export class EnderecoEditarComponent implements OnInit {
           .getEnderecoById(this.id)
           .subscribe(
             response => this.endereco = response,
-            errorResponse => this.endereco = new Endereco()
+            //errorResponse => this.endereco = new Endereco()
           )
       }
     })
   }
 
   voltarParaListagem() {
-    this.router.navigate(['/perfil/cartao'])
+    this.router.navigate(['/perfil/endereco'])
   }
 
   onSubmit() {

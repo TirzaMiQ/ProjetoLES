@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RequestService } from './services/request.service';
-import 'hammerjs';
 
 import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';

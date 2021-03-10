@@ -1,5 +1,15 @@
 <h4>Editar Dados</h4>
-<form>
+<form #editarClienteForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success" role="alert" *ngIf="success == true">
+                Cliente editado com sucesso!
+            </div>
+            <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+                {{ erro }}
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="input-field col s6">
             <input placeholder="Placeholder" id="name" type="text" [(ngModel)]="cliente.nome" name="nome" class="validate">
@@ -26,13 +36,12 @@
             <label for="cpf">CPF</label>
         </div>
         <div class="input-field col s6">
-            <input id="celular" type="text [(ngModel)]=" cliente.celular "
-            name="nome class="validate">
+            <input id="celular" type="text" [(ngModel)]=" cliente.celular " name="nome" class="validate">
             <label for="celular">Celular</label>
         </div>
         <div class="input-field col s6">
-            <input id="residencial" type="text" [(ngModel)]="cliente.residencial" name="nome" class="validate">
-            <label for="residencial">Residencial</label>
+            <input id="celular2" type="text" [(ngModel)]="cliente.celular2" name="nome" class="validate">
+            <label for="celular2">Celular 2</label>
         </div>
     </div>
 

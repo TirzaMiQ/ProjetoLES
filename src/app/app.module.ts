@@ -1,9 +1,11 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RequestService } from './services/request.service';
+import 'hammerjs';
 
 import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
@@ -54,6 +56,7 @@ import { FinalizarCompraComponent } from './cliente/finalizar-compra/finalizar-c
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     HttpClientModule,
     FormsModule,
     CommonModule

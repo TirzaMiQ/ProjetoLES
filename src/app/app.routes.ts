@@ -30,7 +30,7 @@ const routes: Routes = [
         path: 'cliente', component: ClienteListarComponent, children: [
 
           {
-            path: 'editar-cliente', component: EditarClienteComponent, children: [
+            path: 'editar-cliente/:id', component: EditarClienteComponent, children: [
 
               { path: 'cliente-cadastrar', component: ClienteCadastroComponent },
               { path: '', redirectTo: 'cliente', pathMatch: 'full' }
@@ -44,7 +44,7 @@ const routes: Routes = [
         path: 'endereco', component: EnderecoListarComponent, children: [
 
           {
-            path: 'endereco-editar', component: EnderecoEditarComponent, children: [
+            path: 'endereco-editar/:id', component: EnderecoEditarComponent, children: [
 
               { path: 'endereco-cadastrar', component: EnderecoCadastrarComponent },
               { path: '', redirectTo: 'endereco', pathMatch: 'full' }
@@ -58,9 +58,10 @@ const routes: Routes = [
         path: 'cartao', component: CartaoListarComponent, children: [
 
           {
-            path: 'cartao-editar', component: CartaoEditarComponent, children: [
+            path: 'cartao-editar/:id', component: CartaoEditarComponent, children: [
 
-              { path: 'cartao-cadastrar', component: CartaoCadastrarComponent }
+              { path: 'cartao-cadastrar', component: CartaoCadastrarComponent },
+              { path: '', redirectTo: 'endereco', pathMatch: 'full' }
 
             ]
           }

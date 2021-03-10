@@ -46,7 +46,7 @@ export class EditarClienteComponent implements OnInit {
     if (this.id) {
 
       this.service
-        .atualizar(this.clientes)
+        .atualizar(this.cliente)
         .subscribe(response => {
           this.success = true;
           this.errors;
@@ -58,11 +58,11 @@ export class EditarClienteComponent implements OnInit {
     } else {
 
       this.service
-        .salvar(this.clientes)
+        .salvar(this.cliente)
         .subscribe(response => {
           this.success = true;
           this.errors = null as any;
-          this.clientes = response;
+          this.cliente = response;
         }, errorResponse => {
           this.success = false;
           this.errors = errorResponse.error.errors;

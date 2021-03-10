@@ -11,8 +11,14 @@ import { Router } from '@angular/router';
 })
 export class EnderecoCadastrarComponent implements OnInit {
 
-
+  endereco: Endereco;
   enderecos: Endereco[] = [];
+  enderecoSelecionado: Endereco;
+  id: number;
+  success: boolean = false;
+  errors: String[];
+
+
  // enderecoSelecionado: Endereco;
   //mensagemSucesso: string;
   //mensagemErro: string;
@@ -26,23 +32,54 @@ export class EnderecoCadastrarComponent implements OnInit {
     .getEnderecos().subscribe( resposta => this.enderecos = resposta );
   }
 
-  novoCadastro(){
-    this.router.navigate(['/cliente/endereco-cadastrar'])
+  voltarParaListagem() {
+    this.router.navigate(['/perfil/cartao'])
   }
 
-  /* preparaDelecao(enderecos: Endereco){
-    this.enderecoSelecionado = enderecos;
+
+  onSubmit() {
+    if (this.id) {
+
+      this.service
+        .atualizar(this.endereco)
+        .subscribe(response => {
+          this.success = true;
+          this.errors;
+        }, errorResponse => {
+          this.errors = ['Erro ao atualizar o cliente.']
+        })
+
+
+    } else {
+
+      this.service
+        .salvar(this.endereco)
+        .subscribe(response => {
+          this.success = true;
+          this.errors;
+          this.endereco = response;
+        }, errorResponse => {
+          this.success = false;
+          this.errors = errorResponse.error.errors;
+        })
+
+    }
+
   }
 
-  deletarEndereco(){
+  deletarEndereco() {
     this.service
       .deletar(this.enderecoSelecionado)
       .subscribe(
         response => {
-          this.mensagemSucesso = 'Endereço deletado com sucesso!'
+          this.success;
           this.ngOnInit();
         },
-        erro => this.mensagemErro = 'Ocorreu um erro ao deletar o endereço.'
+        errorResponse => {
+          this.success = false;
+          this.errors = errorResponse.error.errors;
+        }
       )
-  } */
+
+  }
 }

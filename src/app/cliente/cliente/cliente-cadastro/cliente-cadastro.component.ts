@@ -62,7 +62,7 @@ export class ClienteCadastroComponent implements OnInit {
         .salvar(this.clientes)
         .subscribe(response => {
           this.success = true;
-          this.errors = null as any;
+          this.errors;
           this.clientes = response;
         }, errorResponse => {
           this.success = false;

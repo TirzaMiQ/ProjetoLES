@@ -8,5 +8,5 @@ export class Cliente {
   genero: string;
   status: string;
   celular: string;
-  residencial: string;
+  celular2: string;
 }

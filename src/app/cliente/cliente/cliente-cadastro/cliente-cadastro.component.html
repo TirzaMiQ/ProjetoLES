@@ -1,5 +1,16 @@
 <div class="row">
-    <form class="col s12">
+    <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert" *ngIf="success == true">
+                    Cadastro realizado com sucesso!
+                </div>
+                <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+                    {{ erro }}
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="input-field col s6">
                 <input placeholder="Placeholder" id="name" type="text" class="validate">
@@ -42,8 +53,8 @@
                 <label for="celular">Celular</label>
             </div>
             <div class="input-field col s6">
-                <input id="residencial" type="text" class="validate">
-                <label for="residencial">Residencial</label>
+                <input id="celular2" type="text">
+                <label for="celular2">Celular 2</label>
             </div>
         </div>
 
@@ -115,8 +126,11 @@
             </div>
         </div>
 
-        <a class="waves-effect waves-light btn-small" style="color: green;"><i class="material-icons left">check</i>Cadastrar</a>
-        <a class="waves-effect waves-light btn-small" style="color: lightseagreen;"><i class="material-icons left">arrow_back</i>Voltar</a>
+        <a type="submit" class="waves-effect waves-light btn">
+            <i class="material-icons">save</i>Cadastrar</a>
+
+        <a type="button" class="waves-effect waves-light btn" (click)="voltarParaListagem()">
+            <i class="material-icons">arrow_back</i>Voltar</a>
 
     </form>
 </div>

@@ -1,8 +1,7 @@
 import { Cliente } from './../cliente.model';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ClienteService } from '../cliente.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cadastro',
@@ -11,10 +10,10 @@ import { Observable } from 'rxjs';
 })
 export class ClienteListarComponent implements OnInit {
 
-  clientes: Cliente;
-  success: boolean = false;
-  errors: String[];
-  id: number | number;
+  cliente: Cliente;
+  clienteSelecionado: Cliente;
+  mensagemSucesso: string;
+  mensagemErro: string;
 
   constructor(
     private service: ClienteService,
@@ -23,11 +22,31 @@ export class ClienteListarComponent implements OnInit {
   ) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.listAll();
+  }
+
+  listAll(){
     this.service.getClientes()
     .subscribe((response: any) => {
-      this.clientes = response.data;
+      this.cliente = response.data;
     })
+  }
+
+  preparaDelecao(cliente: Cliente){
+    this.clienteSelecionado = cliente;
+  }
+
+  deletarCartao(){
+    this.service
+      .deletar(this.clienteSelecionado)
+      .subscribe(
+        response => {
+          this.mensagemSucesso = 'Conta deletada com sucesso!'
+          this.ngOnInit();
+        },
+        erro => this.mensagemErro = 'Ocorreu um erro ao deletar a conta.'
+      )
   }
 
 

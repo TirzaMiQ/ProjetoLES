@@ -1,62 +1,17 @@
-<div>
-    <h4>Lista de Cartões</h4>
-</div>
-
-<div class="mat-elevation-z4">
-    <table class="highlight">
-        <thead>
-            <tr>
-                <th>Numero do Cartão</th>
-                <th>Nome</th>
-                <th>Bandeira</th>
-                <th>Código</th>
-                <th>Ação</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let cartao of cartoes">
-                <td>{{ cartao.numCartao }}</td>
-                <td>{{ cartao.nomeClienteCartao }}</td>
-                <td>{{ cartao.bandeira }}</td>
-                <td>{{ cartao.codigo }}</td>
-                <td>
-                    <a routerLink="/cliente/cartao/cartao-editar/{{ cartao.id }}" class="waves-effect waves-light btn">
-                        <i class="material-icons">create</i></a>
-
-                    <a class="waves-effect waves-light btn modal-trigger" (click)="preparaDelecao(cartao)" href="#modal1">
-                        <i class="material-icons">delete</i></a>
-                </td>
-            </tr>
-        </tbody>
-
-
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4>Confirmação</h4>
-                </div>
-                <div class="modal-content" *ngIf="cartaoSelecionado">
-                    Confirma a deleção do(a) Cartão {{ cartaoSelecionado.numCartao }}?
-                </div>
-
-                <div class="modal-footer">
-                    <a class="waves-effect waves-light btn" (click)="deletarCartao()" data-dismiss="modal">Confirmar</a>
-                    <a class="waves-effect waves-light btn" data-dismiss="modal">Cancelar</a>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-            </div>
-        </div>
-
-    </table>
-</div>
-
-
 <h4>Cadastrar Novo Cartão</h4>
 <form #cartaoForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success" role="alert" *ngIf="success == true">
+                Cartão salvo com sucesso!
+            </div>
+            <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+                {{ erro }}
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="input-field col s6">
             <input id="numcartao" type="text" class="validate">
@@ -83,6 +38,10 @@
             <label for="codigo">Código</label>
         </div>
     </div>
-    <a type="submit" class="waves-effect waves-light btn" *ngIf="!cartao.id">
+    <a type="submit" class="waves-effect waves-light btn">
         <i class="material-icons">save</i>Cadastrar</a>
+
+    <a type="button" class="waves-effect waves-light btn" (click)="voltarParaListagem()">
+        <i class="material-icons">arrow_back</i>Voltar</a>
+
 </form>

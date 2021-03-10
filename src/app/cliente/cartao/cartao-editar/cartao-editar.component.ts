@@ -3,8 +3,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Cartao } from '../cartao.model';
 import { CartaoService } from '../cartao.service';
-//import { Router, ActivatedRoute, Params } from '@angular/router';
-//import { CartaoService } from '../cartao.service';
 
 @Component({
   selector: 'app-cartao-editar',
@@ -52,7 +50,7 @@ export class CartaoEditarComponent implements OnInit {
         .atualizar(this.cartao)
         .subscribe(response => {
           this.success = true;
-          this.errors = null;
+          this.errors;
         }, errorResponse => {
           this.errors = ['Erro ao atualizar o cartão.']
         })
@@ -64,7 +62,7 @@ export class CartaoEditarComponent implements OnInit {
         .salvar(this.cartao)
         .subscribe(response => {
           this.success = true;
-          this.errors = null;
+          this.errors;
           this.cartao = response;
         }, errorResponse => {
           this.success = false;

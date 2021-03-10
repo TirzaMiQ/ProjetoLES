@@ -1,39 +1,58 @@
-<!-- <h4>Editar Endereço</h4>
-<div class="row">
-    <div class="input-field col s6">
-        <input id="logradouro" name="tpLogradouro" type="text" [(ngModel)]="endereco.logradouro" class="validate">
-        <label for="logradouro">Tipo Logradouro</label>
+<h4>Editar Endereço</h4>
+<form #enderecoForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-success" role="alert" *ngIf="success == true">
+                Endereço editado com sucesso!
+            </div>
+            <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+                {{ erro }}
+            </div>
+        </div>
     </div>
-    <div class="input-field col s6">
-        <input id="residencia" type="text" [(ngModel)]="endereco.tpResidencia" class="validate">
-        <label for="residencia">Tipo Residência</label>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="logradouro" name="logradouro" type="text" [(ngModel)]="endereco.logradouro" class="validate">
+            <label for="logradouro">Tipo Logradouro</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="residencia" type="text" [(ngModel)]="endereco.tpResidencia" class="validate">
+            <label for="residencia">Tipo Residência</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="endereco" type="text" [(ngModel)]="endereco.endereco" class="validate">
+            <label for="endereco">Endereço</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="numero" type="text" [(ngModel)]="endereco.numero" class="validate">
+            <label for="numero">Numero</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="bairro" type="text" [(ngModel)]="endereco.bairro" class="validate">
+            <label for="bairro">Bairro</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="cep" type="text" [(ngModel)]="endereco.cep" class="validate">
+            <label for="cep">CEP</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="cidade" type="text" [(ngModel)]="endereco.cidade" class="validate">
+            <label for="cidade">Cidade</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="estado" type="text" [(ngModel)]="endereco.estado" class="validate">
+            <label for="estado">Estado</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="pais" type="text" [(ngModel)]="endereco.pais" class="validate">
+            <label for="pais">País</label>
+        </div>
     </div>
-    <div class="input-field col s6">
-        <input id="endereco" type="text" [(ngModel)]="endereco.endereco" class="validate">
-        <label for="endereco">Endereço</label>
-    </div>
-    <div class="input-field col s6">
-        <input id="numero" type="text" [(ngModel)]="endereco.numero" class="validate">
-        <label for="numero">Numero</label>
-    </div>
-    <div class="input-field col s6">
-        <input id="bairro" type="text" [(ngModel)]="endereco.bairro" class="validate">
-        <label for="bairro">Bairro</label>
-    </div>
-    <div class="input-field col s6">
-        <input id="cep" type="text" [(ngModel)]="endereco.cep" class="validate">
-        <label for="cep">CEP</label>
-    </div>
-    <div class="input-field col s6">
-        <input id="cidade" type="text" [(ngModel)]="endereco.cidade" class="validate">
-        <label for="cidade">Cidade</label>
-    </div>
-    <div class="input-field col s6">
-        <input id="estado" type="text" [(ngModel)]="endereco.estado" class="validate">
-        <label for="estado">Estado</label>
-    </div>
-    <div class="input-field col s6">
-        <input id="pais" type="text" [(ngModel)]="endereco.pais" class="validate">
-        <label for="pais">País</label>
-    </div>
-</div> -->
+
+    <a type="submit" class="waves-effect waves-light btn" *ngIf="!endereco.id">
+        <i class="material-icons">save</i>Atualizar</a>
+
+    <a type="button" class="waves-effect waves-light btn" (click)="voltarParaListagem()">
+        <i class="material-icons">arrow_back</i>Voltar</a>
+
+</form>

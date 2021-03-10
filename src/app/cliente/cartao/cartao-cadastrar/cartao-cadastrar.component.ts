@@ -11,38 +11,77 @@ import { Router } from '@angular/router';
 })
 export class CartaoCadastrarComponent implements OnInit {
 
-  cartoes: Cartao[] = [];
+  cartao: Cartao;
+  cartoes: Cartao[];
   cartaoSelecionado: Cartao;
-  mensagemSucesso: string;
-  mensagemErro: string;
+  id: number;
+  success: boolean = false;
+  errors: String[];
 
   constructor(
     private service: CartaoService,
-    private router: Router) {}
+    private router: Router) { }
 
   ngOnInit(): void {
     this.service
-    .getCartoes().subscribe( resposta => this.cartoes = resposta );
+      .getCartoes().subscribe(resposta => this.cartoes = resposta);
   }
 
-  novoCadastro(){
-    this.router.navigate(['/cliente/cartao'])
+ /* novoCadastro() {
+    this.router.navigate(['/perfil/cartao-cadastrar'])
+  } */
+
+  voltarParaListagem() {
+    this.router.navigate(['/perfil/cartao'])
   }
 
-  preparaDelecao(cartao: Cartao){
+ /* preparaDelecao(cartao: Cartao) {
     this.cartaoSelecionado = cartao;
+  } */
+
+  onSubmit() {
+    if (this.id) {
+
+      this.service
+        .atualizar(this.cartao)
+        .subscribe(response => {
+          this.success = true;
+          this.errors;
+        }, errorResponse => {
+          this.errors = ['Erro ao cadastrar o cartão.']
+        })
+
+
+    } else {
+
+      this.service
+        .salvar(this.cartao)
+        .subscribe(response => {
+          this.success = true;
+          this.errors;
+          this.cartao = response;
+        }, errorResponse => {
+          this.success = false;
+          this.errors = errorResponse.error.errors;
+        })
+
+    }
+
   }
 
-  deletarCartao(){
+  /* deletarCartao() {
     this.service
       .deletar(this.cartaoSelecionado)
       .subscribe(
         response => {
-          this.mensagemSucesso = 'Cartão deletado com sucesso!'
+          this.success;
           this.ngOnInit();
         },
-        erro => this.mensagemErro = 'Ocorreu um erro ao deletar o cartão.'
+        errorResponse => {
+          this.success = false;
+          this.errors = errorResponse.error.errors;
+        }
       )
-  }
 
+  } */
 }

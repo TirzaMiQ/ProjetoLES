@@ -19,29 +19,35 @@ export class CartaoListarComponent implements OnInit {
     private service: CartaoService,
     private router: Router) {}
 
-  ngOnInit(): void {
-    this.service
-    .getCartoes().subscribe( resposta => this.cartoes = resposta );
-  }
+    ngOnInit() {
+      this.listAll();
+    }
 
-  novoCadastro(){
-    this.router.navigate(['/perfil/cartao'])
-  }
+    listAll(){
+      this.service.getCartoes()
+      .subscribe((response: any) => {
+        this.cartoes = response.data;
+      })
+    }
 
-  preparaDelecao(cartao: Cartao){
-    this.cartaoSelecionado = cartao;
-  }
+    novoCadastroCartao(){
+      this.router.navigate(['/perfil/cartao/cartao-cadastrar'])
+    }
 
-  deletarCartao(){
-    this.service
-      .deletar(this.cartaoSelecionado)
-      .subscribe(
-        response => {
-          this.mensagemSucesso = 'Cartão deletado com sucesso!'
-          this.ngOnInit();
-        },
-        erro => this.mensagemErro = 'Ocorreu um erro ao deletar o cartão.'
-      )
-  }
+    preparaDelecao(cartao: Cartao){
+      this.cartaoSelecionado = cartao;
+    }
+
+    deletarCartao(){
+      this.service
+        .deletar(this.cartaoSelecionado)
+        .subscribe(
+          response => {
+            this.mensagemSucesso = 'Cartão deletado com sucesso!'
+            this.ngOnInit();
+          },
+          erro => this.mensagemErro = 'Ocorreu um erro ao deletar o cartão.'
+        )
+    }
 
 }

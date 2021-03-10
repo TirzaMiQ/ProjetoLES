@@ -23,6 +23,9 @@
                     <a routerLink="/cliente/cartao/cartao-editar/{{ cartao.id }}" class="waves-effect waves-light btn">
                         <i class="material-icons">create</i></a>
 
+                    <a type="button" class="waves-effect waves-light btn" (click)="novoCadastroCartao()">
+                        <i class="material-icons">save</i>Cadastrar Cartão</a>
+
                     <a class="waves-effect waves-light btn modal-trigger" (click)="preparaDelecao(cartao)" href="#modal1">
                         <i class="material-icons">delete</i></a>
                 </td>
@@ -46,43 +49,7 @@
                 </div>
 
             </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-            </div>
         </div>
 
     </table>
 </div>
-
-
-<h4>Cadastrar Novo Cartão</h4>
-<form #cartaoForm="ngForm" (ngSubmit)="onSubmit()">
-    <div class="row">
-        <div class="input-field col s6">
-            <input id="numcartao" type="text" class="validate">
-            <label for="numcartao">Número do Cartão</label>
-        </div>
-        <div class="input-field col s6">
-            <input id="nomeclientecartao" type="text" class="validate">
-            <label for="nomeclientecartao">Nome impresso no Cartão</label>
-        </div>
-        <div class="input-field col s12">
-            <select>
-                  <option value="visa">Visa</option>
-                  <option value="mastercard">MasterCard</option>
-                  <option value="american">American Express</option>
-                  <option value="discover">Discover Network</option>
-                  <option value="elo">Elo</option>
-                  <option value="hipercard">Hipercard</option>
-              </select>
-            <label>Bandeira</label>
-        </div>
-
-        <div class="input-field col s6">
-            <input id="codigo" type="text" class="validate">
-            <label for="codigo">Código</label>
-        </div>
-    </div>
-    <a type="submit" class="waves-effect waves-light btn" *ngIf="!cartao.id">
-        <i class="material-icons">save</i>Cadastrar</a>
-</form>

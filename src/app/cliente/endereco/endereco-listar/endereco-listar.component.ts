@@ -1,4 +1,7 @@
+import { Endereco } from './../endereco.model';
 import { Component, OnInit } from '@angular/core';
+import { EnderecoService } from '../../../endereco.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-endereco-listar',
@@ -7,9 +10,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnderecoListarComponent implements OnInit {
 
-  constructor() { }
+  enderecos: Endereco[] = [];
+  enderecoSelecionado: Endereco;
+  mensagemSucesso: string;
+  mensagemErro: string;
 
-  ngOnInit(): void {
-  }
+  constructor(
+    private service: EnderecoService,
+    private router: Router) {}
+
+    ngOnInit() {
+      this.listAll();
+    }
+
+    listAll(){
+      this.service.getEndereco()
+      .subscribe((response: any) => {
+        this.enderecos = response.data;
+      })
+    }
+
+    novoCadastroEndereco(){
+      this.router.navigate(['/perfil/endereco/endereco-cadastrar'])
+    }
+
+    preparaDelecao(endereco: Endereco){
+      this.enderecoSelecionado = endereco;
+    }
+
+    deletarCartao(){
+      this.service
+        .deletar(this.enderecoSelecionado)
+        .subscribe(
+          response => {
+            this.mensagemSucesso = 'Endereço deletado com sucesso!'
+            this.ngOnInit();
+          },
+          erro => this.mensagemErro = 'Ocorreu um erro ao deletar o endereço.'
+        )
+    }
 
 }

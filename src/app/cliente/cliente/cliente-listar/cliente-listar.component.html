@@ -16,17 +16,19 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let cliente of clientes">
+            <tr *ngIf="cliente.id">
                 <td>{{ cliente.nome }}</td>
-                <td>{{ cliente.nomeClienteCartao }}</td>
-                <td>{{ cliente.bandeira }}</td>
-                <td>{{ cliente.codigo }}</td>
+                <td>{{ cliente.email }}</td>
+                <td>{{ cliente.dtNascimento }}</td>
+                <td>{{ cliente.cpf }}</td>
+                <td>{{ cliente.celular }}</td>
+                <td>{{ cliente.celular2 }}</td>
                 <td>
-                    <a routerLink="/cliente/cliente/editar-cliente/{{ cliente.id }}" class="waves-effect waves-light btn">
-                        <i class="material-icons">create</i></a>
+                    <!-- <a routerLink="/editar-cliente/{{ cliente.id }}" class="waves-effect waves-light btn">
+                        <i class="material-icons">create</i>Editar</a> -->
 
-                    <a class="waves-effect waves-light btn modal-trigger" (click)="preparaDelecao(cartao)" href="#modal1">
-                        <i class="material-icons">delete</i></a>
+                    <a class="waves-effect waves-light btn modal-trigger" (click)="preparaDelecao(cliente)" href="#modal1">
+                        <i class="material-icons">delete</i>Excluir</a>
                 </td>
             </tr>
         </tbody>
@@ -39,7 +41,7 @@
                     <h4>Confirmação</h4>
                 </div>
                 <div class="modal-content" *ngIf="clienteSelecionado">
-                    Confirma a deleção do(a) Cartão {{ clienteSelecionado.numCartao }}?
+                    Confirma a deleção da Conta {{ clienteSelecionado.email }}?
                 </div>
 
                 <div class="modal-footer">

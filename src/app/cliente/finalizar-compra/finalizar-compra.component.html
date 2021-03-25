@@ -1,1 +1,39 @@
-<p>finalizar-compra works!</p>
+<!-- Page Content -->
+<div class="container">
+    <form #finalizaCompra>
+        <h3 class="card-title my-3">Obrigado pela compra</h3>
+        <h5 class="card-title mt-4">
+            <b>Detalhes da compra</b>
+        </h5>
+
+        <div class="row">
+            <div class="card col-md-8 m-3">
+                <div class="card-body">
+                    <h5 class="card-title">Produtos</h5>
+                    <br>
+                    <div class="row">
+                        <img style="height: 80px; width: 100px;" src="./../../../../assets/rede3.jpeg">
+                        <h6 class="card-subtitle mb-4 col-md-5 text-muted">Rede Simples Preta</h6>
+                        <h6 class="card-subtitle mb-2 col-md-2 text-muted">1</h6>
+
+                        <h6 class="card-subtitle mb-2 col-md-3 text-muted">
+                            119,00
+                        </h6>
+                    </div>
+
+                    <div class="card-footer" style="background-color: white;">
+                        <div class="row col-md-12">
+                            <div class="form-check offset-md-4 col-md-4">
+                                <a type="button" routerLink="/home" id="btn" class="btn btn-success w-100">Continuar Comprando</a>
+                            </div>
+                            <div class="form-check col-md-4">
+                                <a type="button" routerLink="/pedidos" id="btn" name="btnPedidos" class="btn btn-primary">Ir
+										              para pedidos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

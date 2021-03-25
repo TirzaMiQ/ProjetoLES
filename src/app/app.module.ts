@@ -1,3 +1,15 @@
+import { ClientesListaModule } from './admin/clientes-lista/clientes-lista.module';
+import { LoginModule } from './login/login.module';
+import { TapeteListarModule } from './cliente/produto/tapete/tapete-listar/tapete-listar.module';
+import { ProdutoModule } from './cliente/produto/produto/produto.module';
+import { CarrinhoModule } from './cliente/produto/carrinho/carrinho.module';
+import { HomeModule } from './cliente/home/home.module';
+import { FinalizarCompraModule } from './cliente/finalizar-compra/finalizar-compra.module';
+import { CompraModule } from './cliente/compra/compra.module';
+import { TrocaModule } from './admin/troca/troca.module';
+import { PedidosModule } from './admin/pedidos/pedidos.module';
+import { HomeAdminModule } from './admin/home/home-admin.module';
+import { RedeListarModule } from './cliente/produto/rede/rede-listar/rede-listar.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,48 +21,26 @@ import { RequestService } from './services/request.service';
 import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './cliente/home/home.component';
-import { ClienteCadastroComponent } from './cliente/cliente/cliente-cadastro/cliente-cadastro.component';
-import { NavbarComponent } from './fragmentos/navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
-import { RedeListarComponent } from './cliente/produto/rede/rede-listar/rede-listar.component';
-import { TapeteListarComponent } from './cliente/produto/tapete/tapete-listar/tapete-listar.component';
-import { EditarClienteComponent } from './cliente/cliente/editar-cliente/editar-cliente.component';
-import { NavbarLogadoComponent } from './fragmentos/navbar-logado/navbar-logado.component';
 import { HomeAdminComponent } from './admin/home/home-admin.component';
-import { CartaoCadastrarComponent } from './cliente/cartao/cartao-cadastrar/cartao-cadastrar.component';
-import { CartaoEditarComponent } from './cliente/cartao/cartao-editar/cartao-editar.component';
-import { CartaoListarComponent } from './cliente/cartao/cartao-listar/cartao-listar.component';
-import { EnderecoCadastrarComponent } from './cliente/endereco/endereco-cadastrar/endereco-cadastrar.component';
-import { EnderecoEditarComponent } from './cliente/endereco/endereco-editar/endereco-editar.component';
-import { EnderecoListarComponent } from './cliente/endereco/endereco-listar/endereco-listar.component';
-import { ProdutoComponent } from './cliente/produto/produto/produto.component';
-import { CarrinhoComponent } from './cliente/produto/carrinho/carrinho.component';
-import { CompraComponent } from './cliente/compra/compra.component';
-import { FinalizarCompraComponent } from './cliente/finalizar-compra/finalizar-compra.component';
+import { ClienteService } from './cliente/cliente/cliente.service';
+import { CartaoService } from './cliente/cartao/cartao.service';
+import { EnderecoService } from './cliente/endereco/endereco.service';
+import { ProdutoService } from './cliente/produto/produto.service';
+import { ProdutosService } from './admin/produtos/produtos.service';
+import { ProdutosModule } from './admin/produtos/produtos.module';
+import { CartaoModule } from './cliente/cartao/cartao.module';
+import { ClienteModule } from './cliente/cliente/cliente.module';
+import { EnderecoModule } from './cliente/endereco/endereco.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    NavbarComponent,
-    LoginComponent,
-    NavbarLogadoComponent,
-    HomeAdminComponent,
-    ClienteCadastroComponent,
-    EditarClienteComponent,
-    CartaoCadastrarComponent,
-    CartaoListarComponent,
-    CartaoEditarComponent,
-    EnderecoCadastrarComponent,
-    EnderecoEditarComponent,
-    EnderecoListarComponent,
-    ProdutoComponent,
-    CarrinhoComponent,
-    RedeListarComponent,
-    TapeteListarComponent,
-    CompraComponent,
-    FinalizarCompraComponent,
+   // HomeComponent,
+    //LoginComponent,
+   // HomeAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -58,10 +48,31 @@ import { FinalizarCompraComponent } from './cliente/finalizar-compra/finalizar-c
     RouterModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    //LoginModule,
+    ClientesListaModule,
+    //HomeAdminModule,
+    PedidosModule,
+    ProdutosModule,
+    TrocaModule,
+    CartaoModule,
+    ClienteModule,
+    CompraModule,
+    EnderecoModule,
+    FinalizarCompraModule,
+    HomeModule,
+    CarrinhoModule,
+    ProdutoModule,
+    RedeListarModule,
+    TapeteListarModule
   ],
   providers: [
-    RequestService
+    RequestService,
+    ClienteService,
+    CartaoService,
+    EnderecoService,
+    ProdutoService,
+    ProdutosService
   ],
   bootstrap: [AppComponent]
 })

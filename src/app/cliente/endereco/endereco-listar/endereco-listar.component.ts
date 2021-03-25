@@ -1,6 +1,6 @@
 import { Endereco } from './../endereco.model';
 import { Component, OnInit } from '@angular/core';
-import { EnderecoService } from '../../../endereco.service';
+import { EnderecoService } from './../endereco.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -24,14 +24,14 @@ export class EnderecoListarComponent implements OnInit {
     }
 
     listAll(){
-      this.service.getEndereco()
+      this.service.getEnderecos()
       .subscribe((response: any) => {
         this.enderecos = response.data;
       })
     }
 
     novoCadastroEndereco(){
-      this.router.navigate(['/perfil/endereco/endereco-cadastrar'])
+      this.router.navigate(['/perfil/endereco/form-endereco'])
     }
 
     preparaDelecao(endereco: Endereco){

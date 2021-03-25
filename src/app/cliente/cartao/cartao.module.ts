@@ -1,26 +1,26 @@
-/*import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CartaoEditarComponent } from './cartao-editar/cartao-editar.component';
+
 import { CartaoListarComponent } from './cartao-listar/cartao-listar.component';
-import { CartaoCadastrarComponent } from './cartao-cadastrar/cartao-cadastrar.component';
+import { FormCartaoComponent } from './form-cartao/form-cartao.component';
+import { FormsModule } from '@angular/forms';
+import { CartaoRoutingModule } from './cartao-routing.module';
 
 
 @NgModule({
   declarations: [
-    CartaoCadastrarComponent,
     CartaoListarComponent,
-    CartaoEditarComponent
+    FormCartaoComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
-  ], exports: [
-    CartaoCadastrarComponent,
+    FormsModule,
+    CartaoRoutingModule
+  ],
+  exports: [
     CartaoListarComponent,
-    CartaoEditarComponent
+    FormCartaoComponent
   ]
 })
-
-export class CartaoModule { } */
+export class CartaoModule { }

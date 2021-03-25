@@ -1,1 +1,272 @@
-<p>compra works!</p>
+<div class="container">
+    <div class="row">
+        <div class="card col-md-6 m-3" style="width: 18rem;">
+            <div class="card-header separador-card">
+                <b>endereço de entrega</b>
+            </div>
+            <div class="card-body ">
+                <h6 class="card-subtitle mb-2 text-muted">Tirza Miranda</h6>
+                <p class="card-text card_botton">Rua Nito Sona, 1624</p>
+                <p class="card-text card_botton">Jundiapeba</p>
+                <p class="card-text card_botton">Mogi das Cruzes - SP</p>
+                <p class="card-text">CEP 08750-640</p>
+
+                <button name="btnModalAlterarEndereco" type="button" class="btn btn-primary ml-4" data-toggle="modal" data-target="#modalExemplo2">
+                  Alterar Endereço </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modalExemplo2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Escolher endereço</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="offset-md-1 col-md-10  form-group">
+                                    <input type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="exampleRadios1">
+                                      Rua das Flores, 203, Casa<br>
+                                      Bras Cubas<br>
+                                      Mogi das Cruzes - SP<br>
+                                      CEP 08740-210<br>
+                                    </label>
+                                    <br>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Alterar</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" name="btnFecharModal">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card col-md-5 m-3" style="width: 18rem;">
+        <div class="card-header separador-card">
+            <b>Opções de entrega</b>
+        </div>
+        <div class="card-body">
+            <div class="col-md-10  form-group">
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <input type="radio" name="exampleRadios1" id="exampleRadios1" value="option1">
+                        <label class="form-check-label" for="exampleRadios1">SEDEX</label>
+                    </div>
+                    <div class="offset-md-4 col-md-4">
+                        <label class="form-check-label" for="exampleRadios1">R$7,00</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-5">
+                        <input type="radio" name="exampleRadios1" id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">NORMAL</label>
+                    </div>
+                    <div class="offset-md-3 col-md-4">
+                        <label class="form-check-label" for="exampleRadios1">R$2,90</label>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-md-12">
+                        <p class="card-text">O pedido será liberado somente após a aprovação do pagamento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Cartão de Credito</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">2 Cartões de Credito</a>
+                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Boleto Bancario</a>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="row">
+                    <div class="card col-md-3 m-3">
+                        <div class="card-body">
+                            <div class="form-inline">
+                                <p class="card-text card_botton">Terminado em **** **** **** 2541</p>
+                            </div>
+                            <p class="card-text card_botton">Visa</p>
+                        </div>
+                        <div class="card-footer" style="background-color: white;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                                    <label class="form-check-label" for="exampleRadios1">Pagar com este cartão</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card col-md-3 m-3">
+                        <div class="card-body">
+                            <div class="form-inline">
+                                <p class="card-text card_botton">Terminado em **** **** **** 7485</p>
+                            </div>
+                            <p class="card-text card_botton">Elo</p>
+                        </div>
+                        <div class="card-footer" style="background-color: white;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                                    <label class="form-check-label" for="exampleRadios1">Pagar com este cartão</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:130px;">
+                        <button id="btnAddCartao" type="button" class="btn btn-success ml-4" data-toggle="modal" data-target="#exampleModalCenter">
+                          Adicionar cartão
+                        </button>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Cadastrar Cartão</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="offset-md-2 col-md-8  form-group">
+                                                <label class="control-label" for="txtNomeCartao">Nome impresso no cartão</label>
+                                                <input id="txtNomeCartao" name="txtNomeCartao" ty pe="text" placeholder="Joao da Silva" class="form-control" />
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="offset-md-2 col-md-8  form-group">
+                                                <label class="control-label" for="txtNumeroCartao">Numero do cartão</label>
+                                                <input id="txtNumeroCartao" name="txtNumeroCartao" type="text" placeholder="1234 5678 9012 3456" class="form-control" />
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="offset-md-2 col-md-8  form-group">
+                                                <label for="sabor" class="control-label">Bandeira</label>
+                                                <select id="txtBandeiraCartao" name="txtBandeiraCartao" placeholder="Visa" class="form-control">
+                                                    <option value=""></option>
+                                                    <option value="Visa">Visa</option>
+                                                    <option value="MasterCard">Mastercard</option>
+                                                    <option value="Elo">Elo</option>
+                                                    <option value="American Express">American Express</option>
+                                                    <option value="Hipercard">Hipercard</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="offset-md-2 col-md-8  form-group">
+                                                <label class="control-label" for="txtCodigoCartao">Código de segurança (CSV)</label>
+                                                <input id="txtCodigoCartao" name="txtCodigoCartao" type="text" placeholder="810" class="form-control" />
+                                            </div>
+                                            <input type="hidden" name="txtIdCliente" />
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" name="btnSalvar" value="save" class="btn btn-primary">Salvar</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+                <div class="row">
+                    <div class="card col-md-3 m-3">
+                        <div class="card-body">
+                            <div class="form-inline">
+                                <p class="card-text card_botton">Terminado em **** **** **** 5263</p>
+                            </div>
+                            <p class="card-text card_botton">MasterCard</p>
+                        </div>
+                        <div class="card-footer" style="background-color: white;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                                    <label class="form-check-label" for="exampleRadios1">Pagar com este cartão</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="card col-md-3 m-3">
+                    <div class="card-body">
+                        <p class="card-text card_botton">Imprima o boleto e pague no banco</p>
+                        <p class="card-text card_botton">ou pague pela internet utilizando o código de barras do boleto</p>
+                        <p class="card-text card_botton">o prazo de validade do boleto é de 1 dia útil</p>
+                    </div>
+                    <div class="card-footer" style="background-color: white;">
+                        <div class="form-check">
+                            <button type="button" class="btn btn-success">Pagar com boleto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="card col-md-10 m-3">
+        <div class="card-body">
+            <h5 class="card-title">Produtos</h5>
+            <div class="row">
+                <h6 class="card-subtitle mb-2 col-md-5 text-muted">Rede Simples Preta</h6>
+                <h6 class="card-subtitle mb-2 col-md-2 text-muted">1</h6>
+
+                <h6 class="card-subtitle mb-2 col-md-3 text-muted">
+                    119,00
+                </h6>
+
+            </div>
+            <div class="row">
+                <div class="col-md-4 mt-4">
+                    <h6 class="card-subtitle mb-2 col-md-8 text-muted"><b>Cupom de desconto</b></h6>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-inline m-2">
+                    <input name="txtCupom" id="txtCupom" type="text" class="form-control">
+                    <button type="button" class="btn btn-primary">Aplicar</button>
+                </div>
+            </div>
+
+            <div class="card-footer" style="background-color: white;">
+                <div class="row">
+                    <div class="form-check offset-md-9 col-md-3">
+                        <a routerLink="/finalizar-compra" id="btnFinalizarCompra" type="button" class="btn btn-success">Finalizar Compra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

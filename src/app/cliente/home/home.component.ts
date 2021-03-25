@@ -1,4 +1,7 @@
+import { listaProduto } from './lista-produtos.model';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProdutoService } from '../produto/produto.service';
 
 @Component({
   // esses selectores viram tags que exibem o conteudo da html na app.html(tela inicial)
@@ -8,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  produtos: listaProduto[] = [];
 
-  ngOnInit(): void {
-  }
+  constructor(
+    private service: ProdutoService,
+    private router: Router) {}
+
+    ngOnInit() {
+      this.listAll();
+    }
+
+    listAll(){
+      this.service.getProdutos()
+      .subscribe((response: any) => {
+        this.produtos = response.data;
+      })
+    }
 
 }

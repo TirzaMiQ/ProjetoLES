@@ -1,0 +1,47 @@
+<h4>Editar Cartão</h4>
+<div class="container">
+    <form #cartaoForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert" *ngIf="success == true">
+                    Cartão salvo/atualizado com sucesso!
+                </div>
+                <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+                    {{ erro }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="numcartao" name="numCartao" type="text" [(ngModel)]="cartao.numCartao" class=" validate ">
+                <label for="numcartao ">Número do Cartão</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="nomeclientecartao" name="nomeClienteCartao" type="text " [(ngModel)]="cartao.nomeClienteCartao " class="validate ">
+                <label for="nomeclientecartao ">Nome impresso no Cartão</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="tipoBandeira" name="bandeira" type="text " [(ngModel)]="cartao.bandeira " class="validate ">
+                <label for="tipoBandeira">Bandeira</label>
+            </div>
+
+            <div class="input-field col s6">
+                <input id="codigo" name="codigo" type="text " [(ngModel)]="cartao.codigo " class="validate ">
+                <label for="codigo">Código</label>
+            </div>
+        </div>
+
+        <a type="submit" class="btn btn-success" routerLink="/form-cartao">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
+            <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
+          </svg> Salvar</a>
+
+        <a type="button" class="btn btn-warning" (click)="voltarParaListagem()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+          </svg> Voltar</a>
+
+    </form>
+</div>

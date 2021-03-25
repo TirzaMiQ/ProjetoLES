@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-finalizar-compra',
+  selector: 'finalizar-compra',
   templateUrl: './finalizar-compra.component.html',
   styleUrls: ['./finalizar-compra.component.css']
 })

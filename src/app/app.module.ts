@@ -1,5 +1,4 @@
 import { ClientesListaModule } from './admin/clientes-lista/clientes-lista.module';
-import { LoginModule } from './login/login.module';
 import { TapeteListarModule } from './cliente/produto/tapete/tapete-listar/tapete-listar.module';
 import { ProdutoModule } from './cliente/produto/produto/produto.module';
 import { CarrinhoModule } from './cliente/produto/carrinho/carrinho.module';
@@ -8,7 +7,6 @@ import { FinalizarCompraModule } from './cliente/finalizar-compra/finalizar-comp
 import { CompraModule } from './cliente/compra/compra.module';
 import { TrocaModule } from './admin/troca/troca.module';
 import { PedidosModule } from './admin/pedidos/pedidos.module';
-import { HomeAdminModule } from './admin/home/home-admin.module';
 import { RedeListarModule } from './cliente/produto/rede/rede-listar/rede-listar.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -20,9 +18,6 @@ import { RequestService } from './services/request.service';
 
 import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './cliente/home/home.component';
-import { LoginComponent } from './login/login.component';
-import { HomeAdminComponent } from './admin/home/home-admin.component';
 import { ClienteService } from './cliente/cliente/cliente.service';
 import { CartaoService } from './cliente/cartao/cartao.service';
 import { EnderecoService } from './cliente/endereco/endereco.service';
@@ -32,6 +27,7 @@ import { ProdutosModule } from './admin/produtos/produtos.module';
 import { CartaoModule } from './cliente/cartao/cartao.module';
 import { ClienteModule } from './cliente/cliente/cliente.module';
 import { EnderecoModule } from './cliente/endereco/endereco.module';
+import { NavbarModule } from './fragmentos/navbar.module';
 
 
 
@@ -49,9 +45,8 @@ import { EnderecoModule } from './cliente/endereco/endereco.module';
     HttpClientModule,
     FormsModule,
     CommonModule,
-    //LoginModule,
+    NavbarModule,
     ClientesListaModule,
-    //HomeAdminModule,
     PedidosModule,
     ProdutosModule,
     TrocaModule,

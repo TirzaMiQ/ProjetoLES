@@ -6,17 +6,15 @@ import { FormClienteComponent } from './form-cliente/form-cliente.component';
 
 const routes: Routes = [
   {
-    path: 'perfil', component: NavbarComponent, children: [
-      {
-        path: 'cliente-listar', component: ClienteListarComponent, children: [
+    //path: 'perfil', component: NavbarComponent, children: [
 
-          { path: 'form-cliente', component: FormClienteComponent },
-          { path: '', redirectTo: 'cliente-listar', pathMatch: 'full' }
-        ]
-      }
-
+    path: 'cliente-listar', component: ClienteListarComponent, children: [
+      { path: 'form-cliente', component: FormClienteComponent },
+      { path: '', redirectTo: 'cliente-listar', pathMatch: 'full' }
     ]
-  },
+  }
+
+   // ]
 ];
 
 @NgModule({

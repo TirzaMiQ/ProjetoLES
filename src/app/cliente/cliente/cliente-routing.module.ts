@@ -9,8 +9,8 @@ const routes: Routes = [
     //path: 'perfil', component: NavbarComponent, children: [
 
     path: 'cliente-listar', component: ClienteListarComponent, children: [
-      { path: 'form-cliente', component: FormClienteComponent },
-      { path: '', redirectTo: 'cliente-listar', pathMatch: 'full' }
+      { path: 'form-cliente', component: FormClienteComponent }
+      //{ path: '', redirectTo: 'cliente-listar', pathMatch: 'full' }
     ]
   }
 

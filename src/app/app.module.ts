@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { ClientesListaModule } from './admin/clientes-lista/clientes-lista.module';
 import { TapeteListarModule } from './cliente/produto/tapete/tapete-listar/tapete-listar.module';
 import { ProdutoModule } from './cliente/produto/produto/produto.module';
@@ -6,7 +7,7 @@ import { HomeModule } from './cliente/home/home.module';
 import { FinalizarCompraModule } from './cliente/finalizar-compra/finalizar-compra.module';
 import { CompraModule } from './cliente/compra/compra.module';
 import { TrocaModule } from './admin/troca/troca.module';
-import { PedidosModule } from './admin/pedidos/pedidos.module';
+import { PedidosModule } from './cliente/pedidos/pedidos.module';
 import { RedeListarModule } from './cliente/produto/rede/rede-listar/rede-listar.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -16,7 +17,6 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RequestService } from './services/request.service';
 
-import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { ClienteService } from './cliente/cliente/cliente.service';
 import { CartaoService } from './cliente/cartao/cartao.service';
@@ -40,11 +40,11 @@ import { NavbarModule } from './fragmentos/navbar.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     RouterModule,
     HttpClientModule,
     FormsModule,
     CommonModule,
+    AppRoutingModule,
     NavbarModule,
     ClientesListaModule,
     PedidosModule,

@@ -1,58 +1,75 @@
-<h4>Editar Dados</h4>
-<form #editarClienteForm="ngForm" (ngSubmit)="onSubmit()">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="alert alert-success" role="alert" *ngIf="success == true">
-                Cliente editado com sucesso!
-            </div>
-            <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
-                {{ erro }}
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-            <input placeholder="Placeholder" id="name" type="text" [(ngModel)]="cliente.nome" name="nome" class="validate">
-            <label for="name">Nome</label>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="email" type="email" [(ngModel)]="cliente.email" name="email" class="validate">
-                <label for="email">Email</label>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-            <input id="genero" type="text" [(ngModel)]="cliente.genero" name="genero" class="validate">
-            <label for="genero">Gênero</label>
-        </div>
-        <div class="input-field col s6">
-            <input id="dataNascimento" type="date" [(ngModel)]="cliente.dtNascimento" name="dtNascimento" class="validate">
-            <label for="dataNascimento">Data Nascimento</label>
-        </div>
-        <div class="input-field col s6">
-            <input id="cpf" type="text" [(ngModel)]="cliente.cpf" name="cpf" class="validate">
-            <label for="cpf">CPF</label>
-        </div>
-        <div class="input-field col s6">
-            <input id="celular" type="text" [(ngModel)]=" cliente.celular " name="nome" class="validate">
-            <label for="celular">Celular</label>
-        </div>
-        <div class="input-field col s6">
-            <input id="celular2" type="text" [(ngModel)]="cliente.celular2" name="nome" class="validate">
-            <label for="celular2">Celular 2</label>
-        </div>
-    </div>
+<div class="container">
+    <div class="offset-md-2 col-md-8">
+        <div class="card border-light mb-6" style="width: 600px;">
+            <div class="card-header">Formulário</div>
+            <div class="card-body" style="width: 1200px;">
+                <form class="row" #clienteForm="ngForm" (ngSubmit)="onSubmit()">
 
-    <a type="submit" class="btn btn-success" routerLink="/form-produto">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
-      <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
-    </svg> Salvar</a>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-success" role="alert" *ngIf="success == true">
+                                Cliente editado com sucesso!
+                            </div>
+                            <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+                                {{ erro }}
+                            </div>
+                        </div>
+                    </div>
 
-    <a type="button" class="btn btn-warning" routerLink="/estoque">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
-    </svg> Voltar</a>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="nomeCliente" class="form-label">Nome</label>
+                            <input type="text" name="nomeCliente" class="form-control" id="nomeCliente" [(ngModel)]="cliente.nome">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="emailCliente" class="form-label">Email</label>
+                            <input type="email" name="emailCliente" class="form-control" id="emailCliente" [(ngModel)]="cliente.email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="genero" class="form-label">Gênero</label>
+                            <input type="text" name="genero" class="form-control" id="genero" [(ngModel)]="cliente.genero">
+                        </div>
+                        <div class="col-2">
+                            <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                            <input type="date" name="dataNascimento" class="form-control" id="dataNascimento" [(ngModel)]="cliente.dtNascimento">
+                        </div>
+                        <div class="col-2">
+                            <label for="cpfCliente" class="form-label">CPF</label>
+                            <input type="text" name="cpf" class="form-control" id="cpfCliente" placeholder="111.222.333.44" [(ngModel)]="cliente.cpf">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="celular1" class="form-label">Celular 1</label>
+                            <input type="text" name="celular" class="form-control" id="celular1" [(ngModel)]=" cliente.celular">
+                        </div>
 
-</form>
+                        <div class="col-md-2">
+                            <label for="celular2" class="form-label">Celular 2</label>
+                            <input type="text" name="celular2" class="form-control" id="celular2" [(ngModel)]=" cliente.celular2">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+        <br><br>
+
+        <a style="margin-left: 20%;" type="submit" class="btn btn-success" routerLink="/form-cliente">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
+            <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
+          </svg> Salvar</a>
+
+        <a style="margin-left: 20%;" type="button" class="btn btn-warning ml4" routerLink="/cliente-listar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+          </svg> Voltar</a>
+
+    </div>
+</div>

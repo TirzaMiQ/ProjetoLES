@@ -178,3 +178,17 @@ body {
     left: 0;
     top: 0
 }
+
+
+/* css para os CARDs de produtos */
+
+.fill-div {
+    display: block;
+}
+
+.tamanho_container {
+    height: 50px;
+    width: 380px;
+    margin-top: 200px;
+    margin-left: 50px;
+}

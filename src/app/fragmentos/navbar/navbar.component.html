@@ -1,28 +1,53 @@
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
-
-    <ul class="navbar-nav">
-        <li class="nav-item">
-            <a href="#">
-                <img src="./../../../assets/logo.png" alt="LogoTipo da Loja">
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/rede">Redes</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/tapete">Tapetes</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/cliente">Meus Dados</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/endereco">Meus Endereços</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/cartao">Meus Cartões</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/home">Sair</a>
-        </li>
-    </ul>
+<nav class="navbar navbar-expand-sm" style="background-color: white;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="./../../../assets/logoTipo.png" style="height: 80px" alt="LogoTipo da Loja">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav center ml4" style="margin-left: 160px;">
+                <li class="nav-item">
+                    <a class="nav-link" style="font-size: 18px; color: black;" routerLink="/rede-listar"><b>Redes</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav_font" routerLink="/tapete-listar"><b>Tapetes</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav_font" routerLink="/cliente-listar"><b>Meus Dados</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav_font" routerLink="/endereco-listar"><b>Meus Endereços</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav_font" routerLink="/cartao-listar"><b>Meus Cartões</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav_font" routerLink="/home"><b>Sair</b></a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
+
+<!-- <nav class="nav">
+    <div class="container">
+        <div class="logo">
+            <a href="#">Your Logo</a>
+        </div>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <span class="navTrigger">
+          <i></i>
+          <i></i>
+          <i></i>
+      </span>
+    </div>
+</nav> -->

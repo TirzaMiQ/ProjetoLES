@@ -5,7 +5,7 @@ import { CartaoListarComponent } from '../cartao/cartao-listar/cartao-listar.com
 import { FormCartaoComponent } from '../cartao/form-cartao/form-cartao.component';
 
 const routes: Routes = [
-  { path: 'comprar', component: CompraComponent }
+  { path: 'compra', component: CompraComponent }
 
 ];
 

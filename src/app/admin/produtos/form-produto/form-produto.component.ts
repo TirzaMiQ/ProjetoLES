@@ -21,21 +21,16 @@ export class FormProdutoComponent implements OnInit {
     private service: ProdutosService,
     private router: Router) { }
 
-  ngOnInit(): void {
-    this.service
-      .getCartoes().subscribe(resposta => this.produtos = resposta);
-  }
+  ngOnInit(): void {}
 
-  novoCadastro() {
-    this.router.navigate(['/perfil/cartao-cadastrar'])
-  }
+ /* ngOnInit(): void {
+    this.service
+      .getProdutos().subscribe(resposta => this.produtos = resposta);
+  } */
+
 
   voltarParaListagem() {
-    this.router.navigate(['/perfil/cartao'])
-  }
-
-  preparaDelecao(produto: Produto) {
-    this.produtoSelecionado = produto;
+    this.router.navigate(['/estoque'])
   }
 
   onSubmit() {
@@ -47,7 +42,7 @@ export class FormProdutoComponent implements OnInit {
           this.success = true;
           this.errors;
         }, errorResponse => {
-          this.errors = ['Erro ao cadastrar o produto.']
+          this.errors = ['Erro ao atualizar/cadastrar o produto.']
         })
 
 
@@ -65,22 +60,6 @@ export class FormProdutoComponent implements OnInit {
         })
 
     }
-
-  }
-
-  deletarCartao() {
-    this.service
-      .deletar(this.produtoSelecionado)
-      .subscribe(
-        response => {
-          this.success;
-          this.ngOnInit();
-        },
-        errorResponse => {
-          this.success = false;
-          this.errors = errorResponse.error.errors;
-        }
-      )
 
   }
 

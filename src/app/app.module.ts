@@ -6,7 +6,7 @@ import { CarrinhoModule } from './cliente/produto/carrinho/carrinho.module';
 import { HomeModule } from './cliente/home/home.module';
 import { FinalizarCompraModule } from './cliente/finalizar-compra/finalizar-compra.module';
 import { CompraModule } from './cliente/compra/compra.module';
-import { TrocaModule } from './admin/troca/troca.module';
+import { PedidosAdmModule } from './admin/pedidos/pedidos-adm.module';
 import { PedidosModule } from './cliente/pedidos/pedidos.module';
 import { RedeListarModule } from './cliente/produto/rede/rede-listar/rede-listar.module';
 import { RouterModule } from '@angular/router';
@@ -49,7 +49,7 @@ import { NavbarModule } from './fragmentos/navbar.module';
     ClientesListaModule,
     PedidosModule,
     ProdutosModule,
-    TrocaModule,
+    PedidosAdmModule,
     CartaoModule,
     ClienteModule,
     CompraModule,

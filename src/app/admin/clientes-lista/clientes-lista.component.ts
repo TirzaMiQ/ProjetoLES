@@ -11,7 +11,8 @@ import { ClientesListaService } from './clientesLista.service';
 })
 export class ClientesListaComponent implements OnInit {
 
-  clientes: ClientesLista;
+  clientes: ClientesLista[] = [];
+  cliente = ClientesLista;
   success: boolean = false;
   errors: String[];
   id: number | number;
@@ -31,8 +32,8 @@ export class ClientesListaComponent implements OnInit {
           this.service
             .getClienteListaById(this.id)
             .subscribe(
-              response => this.clientes = response ,
-              errorResponse => this.clientes = new ClientesLista()
+              response => this.cliente = response ,
+              errorResponse => this.cliente = new ClientesLista()
             )
         }
     })
@@ -42,16 +43,28 @@ export class ClientesListaComponent implements OnInit {
     this.router.navigate(['/perfil/cliente'])
   } */
 
-  onSubmit() {
+  inativarCliente() {
+    if(this.id) {
+      this.service.inativar(this.cliente)
+      .subscribe(response => {
+        this.success = true;
+        this.errors;
+      }, errorResponse => {
+        this.errors = ['Erro ao inativar o cliente.']
+      })
+    }
+  }
+
+  ativarCliente() {
     if (this.id) {
 
       this.service
-        .atualizar(this.clientes)
+        .atualizar(this.cliente)
         .subscribe(response => {
           this.success = true;
           this.errors;
         }, errorResponse => {
-          this.errors = ['Erro ao inativar/ativar o cliente.']
+          this.errors = ['Erro ao ativar o cliente.']
         })
 
 

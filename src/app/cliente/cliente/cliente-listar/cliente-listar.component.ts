@@ -8,6 +8,8 @@ import { ClienteService } from '../cliente.service';
   templateUrl: './cliente-listar.component.html',
   styleUrls: ['./cliente-listar.component.css']
 })
+
+
 export class ClienteListarComponent implements OnInit {
 
   cliente: Cliente;
@@ -33,11 +35,15 @@ export class ClienteListarComponent implements OnInit {
     })
   }
 
+ /* editarCadastroCliente(){
+    this.router.navigate(['/form-cliente'])
+  } */
+
   preparaDelecao(cliente: Cliente){
     this.clienteSelecionado = cliente;
   }
 
-  deletarCartao(){
+  deletarContaCliente(){
     this.service
       .deletar(this.clienteSelecionado)
       .subscribe(

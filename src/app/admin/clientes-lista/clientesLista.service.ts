@@ -32,7 +32,7 @@ export class ClientesListaService {
     return this.http.get<any>(`${this.apiURL}/${id}`);
   }
 
-  deletar(cliente: ClientesLista) : Observable<any> {
+  inativar(cliente: ClientesLista) : Observable<any> {
     return this.http.delete<any>(`${this.apiURL}/${cliente.id}`);
   }
 

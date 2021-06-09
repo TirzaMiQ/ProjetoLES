@@ -22,15 +22,15 @@ export class ProdutosService {
     return this.http.put<Produto>(`${this.apiURL}/${produto.id}` , produto);
   }
 
-  getCartoes() : Observable<Produto[]> {
+  getProdutos() : Observable<Produto[]> {
     return this.http.get<Produto[]>(this.apiURL);
   }
 
-  getCartaoById(id: number) : Observable<Produto> {
+  getProdutoById(id: number) : Observable<Produto> {
     return this.http.get<any>(`${this.apiURL}/${id}`);
   }
 
-  deletar(produto: Produto) : Observable<any> {
+  inativar(produto: Produto) : Observable<any> {
     return this.http.delete<any>(`${this.apiURL}/${produto.id}`);
   }
 

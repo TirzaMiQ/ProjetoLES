@@ -9,7 +9,7 @@ import { NavbarComponent } from './fragmentos/navbar/navbar.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '', component: NavbarComponent },
+  //{ path: '', component: NavbarComponent },
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];

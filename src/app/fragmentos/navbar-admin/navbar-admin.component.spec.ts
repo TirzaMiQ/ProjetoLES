@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrocaComponent } from './troca.component';
+import { NavbarAdminComponent } from './navbar-admin.component';
 
-describe('TrocaComponent', () => {
-  let component: TrocaComponent;
-  let fixture: ComponentFixture<TrocaComponent>;
+describe('NavbarAdminComponent', () => {
+  let component: NavbarAdminComponent;
+  let fixture: ComponentFixture<NavbarAdminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TrocaComponent ]
+      declarations: [ NavbarAdminComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TrocaComponent);
+    fixture = TestBed.createComponent(NavbarAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class EnderecoListarComponent implements OnInit {
 
-  enderecos: Endereco[] = [];
+  enderecos: Endereco[] ;
   enderecoSelecionado: Endereco;
   mensagemSucesso: string;
   mensagemErro: string;
@@ -31,14 +31,14 @@ export class EnderecoListarComponent implements OnInit {
     }
 
     novoCadastroEndereco(){
-      this.router.navigate(['/perfil/endereco/form-endereco'])
+      this.router.navigate(['/form-endereco'])
     }
 
     preparaDelecao(endereco: Endereco){
       this.enderecoSelecionado = endereco;
     }
 
-    deletarCartao(){
+    deletarEndereco(){
       this.service
         .deletar(this.enderecoSelecionado)
         .subscribe(

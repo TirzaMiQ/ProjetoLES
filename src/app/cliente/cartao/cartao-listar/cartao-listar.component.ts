@@ -31,7 +31,7 @@ export class CartaoListarComponent implements OnInit {
     }
 
     novoCadastroCartao(){
-      this.router.navigate(['/perfil/cartao/cartao-cadastrar'])
+      this.router.navigate(['/form-cartao'])
     }
 
     preparaDelecao(cartao: Cartao){
